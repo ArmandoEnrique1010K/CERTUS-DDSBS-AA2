@@ -1,0 +1,26 @@
+drop database if exists mscurso;
+create database mscurso;
+use mscurso;
+
+drop table if exists curso;
+create table curso(
+	id_curso int not null primary key auto_increment,
+    nombre varchar(50) not null,
+    dia varchar(50) not null,
+    hora_inicio varchar(50) not null,
+    hora_fin varchar(50) not null,
+    seccion varchar(50) not null,
+    cupomaximo int not null,
+    estado tinyint(1) not null
+) engine = InnoDB, charset = latin1;
+
+insert into curso (nombre, dia, hora_inicio, hora_fin, seccion, cupomaximo, estado) values ('ANÁLISIS Y DISEÑO DE SOFTWARE', 'Sabado', '7:00', '10:00', 'H68', 40, 1);
+insert into curso (nombre, dia, hora_inicio, hora_fin, seccion, cupomaximo, estado) values ('DISEÑO DE SOLUCIONES BASADAS EN SERVICIOS', 'Lunes', '7:00', '8:30', 'Z30', 40, 1);
+insert into curso (nombre, dia, hora_inicio, hora_fin, seccion, cupomaximo, estado) values ('DISEÑO DE SOLUCIONES BASADAS EN SERVICIOS', 'Viernes', '7:00', '10:00', 'Z30', 40, 1);
+insert into curso (nombre, dia, hora_inicio, hora_fin, seccion, cupomaximo, estado) values ('DISEÑO DE SOLUCIONES DE BIG DATA', 'Martes', '7:00', '10:00', 'H68', 40, 1);
+insert into curso (nombre, dia, hora_inicio, hora_fin, seccion, cupomaximo, estado) values ('EMPRENDIMIENTO, PLAN DE DESARROLLO DE NEGOCIO', 'Jueves', '7:00', '10:00', 'H67', 40, 1);
+insert into curso (nombre, dia, hora_inicio, hora_fin, seccion, cupomaximo, estado) values ('ÉTICA EN LOS NEGOCIOS', 'Miercoles', '8:30', '11:30', 'Y63', 60, 1);
+insert into curso (nombre, dia, hora_inicio, hora_fin, seccion, cupomaximo, estado) values ('INGLES B1', 'Sabados', '19:20', '20:50', 'J03', 60, 0);
+select * from curso;
+select * from curso where estado = 1;
+# select c from curso c where c.estado = 1
